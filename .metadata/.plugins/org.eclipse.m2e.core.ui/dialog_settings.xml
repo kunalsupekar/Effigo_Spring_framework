@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="E:\Spring-Framework-Effigo\MyFirstWebApplication"/>
+			<item value="C:\Downloads\Learn-JPA-and-Hibernate\Learn-JPA-and-Hibernate"/>
 			<item value="C:\Downloads\Spring-Boot\Spring-Boot"/>
 			<item value="C:\Downloads\LearnMaven\LearnMaven"/>
 			<item value="C:\Downloads\learn-spring-framework02"/>

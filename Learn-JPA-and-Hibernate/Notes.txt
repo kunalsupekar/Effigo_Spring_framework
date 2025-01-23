@@ -1,0 +1,4 @@
+insert into course values (1,'learn aws','kunal');
+
+
+select * from course;
