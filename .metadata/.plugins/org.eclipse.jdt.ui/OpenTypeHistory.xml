@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=MyFirstWebApplication/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.MyFirstWebApplication.todo{Todo.java[Todo" modifiers="1" timestamp="1737703406672"/>
+    <typeInfo handle="=MyFirstWebApplication/C:\/Users\/kunal.DESKTOP-LHF8DA7\/.m2\/repository\/jakarta\/xml\/bind\/jakarta.xml.bind-api\/4.0.2\/jakarta.xml.bind-api-4.0.2.jar=/maven.pomderived=/true=/=/test=/true=/=/maven.groupId=/jakarta.xml.bind=/=/maven.artifactId=/jakarta.xml.bind-api=/=/maven.version=/4.0.2=/=/maven.scope=/test=/=/maven.pomderived=/true=/&lt;jakarta.xml.bind.annotation.adapters(XmlJavaTypeAdapter$DEFAULT.class[DEFAULT" modifiers="25" timestamp="1721047330876"/>
+</typeInfoHistroy>
