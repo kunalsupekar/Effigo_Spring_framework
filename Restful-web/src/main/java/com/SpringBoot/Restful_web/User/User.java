@@ -1,0 +1,61 @@
+package com.SpringBoot.Restful_web.User;
+
+import java.time.LocalDate;
+
+import org.hibernate.annotations.Parent;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
+public class User {
+	//@JsonIgnore
+	private Integer id;
+	
+	@Size(min=2,message = "minimum 2 char required")
+	@JsonProperty("user_name")
+	private String name;
+	
+	@Past(message = "birthdate should not be in future")
+	@JsonProperty("birth_date")
+	private LocalDate birthDate;
+	
+	public User(Integer id, String name, LocalDate birthDate) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.birthDate = birthDate;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public LocalDate getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", birthDate=" + birthDate + "]";
+	}
+	
+}
