@@ -1,26 +1,50 @@
 package com.SpringBoot.Restful_web.User;
 
 import java.time.LocalDate;
-
-import org.hibernate.annotations.Parent;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
+
+
+@Entity(name = "user_details")
 public class User {
+	
+	protected  User() {
+		
+	}
 	//@JsonIgnore
+	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	@Size(min=2,message = "minimum 2 char required")
-	@JsonProperty("user_name")
+	//@JsonProperty("user_name")
 	private String name;
 	
 	@Past(message = "birthdate should not be in future")
-	@JsonProperty("birth_date")
+	//@JsonProperty("birth_date")
 	private LocalDate birthDate;
+	
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
+	}
+	@OneToMany(mappedBy = "user")
+	@JsonIgnore
+	private List<Post> posts;
 	
 	public User(Integer id, String name, LocalDate birthDate) {
 		super();

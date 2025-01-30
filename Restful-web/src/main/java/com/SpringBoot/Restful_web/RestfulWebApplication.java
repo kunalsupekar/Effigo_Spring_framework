@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RestfulWebApplication {
 
 	public static void main(String[] args) {
+		
 		SpringApplication.run(RestfulWebApplication.class, args);
 	
 	
