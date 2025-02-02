@@ -1,14 +1,13 @@
- package com.In28Minutes.Spring_Boot;
+package com.example.SpringSecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class SpringSecurityApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-		System.out.println("Starting All good !");
+		SpringApplication.run(SpringSecurityApplication.class, args);
 	}
 
 }
