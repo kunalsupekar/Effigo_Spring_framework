@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,12 +24,20 @@ public class HelloWorldResource {
 
 	@GetMapping("/todos")
 	public List<Todo> retrieveAllTodos() {
-		return TODOS_LIST;
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    System.out.println("Authenticated User: " + authentication.getName());
+	    return TODOS_LIST;
 	}
 	
 	
 	@GetMapping("/users/{username}/todos")
+	@PreAuthorize("hasAuthority('ROLE_USER') and #username == authentication.name")
 	public Todo retrieveTodosForSpecificUser(@PathVariable("username") String username) {
+		  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		    System.out.println("Authenticated user: " + authentication.getName());
+		    System.out.println("Requested username: " + username);
+		
 		return TODOS_LIST.get(0);
 	}
 	
