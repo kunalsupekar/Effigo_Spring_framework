@@ -23,15 +23,18 @@ public class Post {
 	@Size(min=10,message = "minimum 10 character is required")
 	private String description;
 	
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
+	private User user;
+	
+	
 	public User getUser() {
 		return user;
 	}
 	public void setUser(User user) {
 		this.user = user;
 	}
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnore
-	private User user;
 	
 	public Integer getId() {
 		return id;
